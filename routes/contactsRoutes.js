@@ -95,7 +95,7 @@ router.put("/:id", requireAuth, async (req, res) => {
 // desc   delete the contact with the given id
 // aceess PRIVATE
 
-router.delete("/", requireAuth, async (req, res) => {
+router.delete("/:id", requireAuth, async (req, res) => {
   try {
     let contact = Contacts.findById(req.params.id);
     if (!contact) return res.status(404).json({ error: "Not Authorized" });
